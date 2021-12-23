@@ -1,0 +1,33 @@
+main .star {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 12.5px;
+  height: 12.5px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px #fff;
+  animation: anim 8s infinite linear;
+}
+
+@keyframes anim {
+  0% {
+    left: var(--x-start);
+    bottom: 0vh;
+    transform: scale(0.1);
+  }
+  25% {
+    transform: scale(var(--scale-25));
+  }
+  50% {
+    transform: scale(var(--scale-50));
+  }
+  75% {
+    transform: scale(var(--scale-75));
+  }
+  100% {
+    left: var(--x-end);
+    bottom: 100vh;
+    transform: scale(0.1);
+  }
+}

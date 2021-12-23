@@ -1,0 +1,30 @@
+@use "../../../mixins";
+@use "../../../vars";
+
+div.modal {
+  position: absolute;
+  top: 1.5%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  padding: 0 2.5vw;
+  background-color: #fff;
+  transition: transform 0.5s ease-in-out, background-color 0.3s;
+  z-index: 1000;
+  font-size: 1.05vw;
+  cursor: pointer;
+  @include mixins.flex(center, center);
+  @include mixins.button(
+    auto,
+    2.5vw,
+    vars.$bg-color-primary,
+    vars.$text-secondary,
+    0.25vw
+  );
+  &:hover {
+    background-color: rgb(233, 233, 233);
+  }
+}
+
+div.modal.show {
+  transform: translate(-50%, 0%);
+}

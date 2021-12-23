@@ -1,0 +1,14 @@
+// Reset
+@use "./reset";
+
+// Main Menu
+@use "./components/General/background/background";
+@use "./components/General/star/star";
+@use "./components/MainMenu/menu";
+
+// DashBoard
+@use "./components/Dashboard/dash_screen/dashScreen";
+@use "./components/Dashboard/board/board";
+@use "./components/Dashboard/controls_panel/controlsPanel";
+@use "./components/Dashboard/cell/cell";
+@use "./components/Dashboard/modal/modal";

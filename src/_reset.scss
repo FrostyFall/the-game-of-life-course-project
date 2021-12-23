@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+div.app.dark {
+  --background-primary: #182633;
+  --choose-cells-color: #e89f11;
+  --btn-primary: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #ffffff;
+  --gradient-start: rgb(152, 159, 221);
+  --gradient-end: rgb(30, 36, 87);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,14 @@
+@mixin button($width, $height, $bg-color, $color, $border-radius) {
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+  color: $color;
+  border-radius: $border-radius;
+}
+
+@mixin flex($horizontal, $vertical, $direction: row) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+  flex-direction: $direction;
+}

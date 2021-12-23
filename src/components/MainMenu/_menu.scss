@@ -1,0 +1,257 @@
+@use "../../vars";
+@use "../../mixins";
+
+main .menu {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.75vw 0;
+  border-radius: 0.5vw;
+  width: 33vw;
+  height: 36vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  main .menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px) opacity(50%);
+    backdrop-filter: blur(10px) opacity(50%);
+  }
+}
+
+main .menu h1 {
+  color: vars.$text-primary;
+  letter-spacing: 2px;
+  font-size: 1.9vw;
+}
+
+main .menu .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 35%;
+}
+
+main .menu .fps-container,
+main .menu .init-cells-container,
+main .menu .radius-container {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    color: vars.$text-primary;
+    font-size: 1.35vw;
+    font-weight: 400;
+  }
+  .number-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    height: 2.35vw;
+    width: 3.05vw;
+    font-size: 1.2vw;
+    border: none;
+    text-align: center;
+    background-color: vars.$bg-color-primary;
+    color: vars.$text-secondary;
+  }
+  button {
+    height: 2.35vw;
+    width: 1.75vw;
+    border: none;
+    background-color: #fff;
+    border-radius: 0.3vw;
+    cursor: pointer;
+    svg {
+      height: 40%;
+      width: 40%;
+    }
+  }
+  button.increment {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  button.decrement {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+main .menu .btn-controls {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .start-btn {
+    width: 47.5%;
+    border: none;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  .start-btn {
+    @include mixins.button(
+      96%,
+      2.75vw,
+      vars.$bg-color-primary,
+      vars.$text-secondary,
+      0.3vw
+    );
+    @include mixins.flex(center, center);
+    text-decoration: none;
+    font-size: 1.15vw;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+  main .menu {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  main .menu h1 {
+    font-size: 2.5vw;
+  }
+
+  main .menu .fps-container,
+  main .menu .init-cells-container,
+  main .menu .radius-container {
+    p {
+      font-size: 1.75vw;
+    }
+    input {
+      height: 3vw;
+      width: 5vw;
+      font-size: 1.4vw;
+    }
+    button {
+      height: 3vw;
+      width: 2.25vw;
+    }
+  }
+
+  main .menu .btn-controls {
+    .start-btn {
+      @include mixins.button(
+        95%,
+        4vw,
+        vars.$bg-color-primary,
+        vars.$text-secondary,
+        0.3vw
+      );
+      font-size: 1.6vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (orientation: portrait) {
+  main .menu {
+    padding: 3vw 0;
+    width: 65vw;
+    height: 70vw;
+  }
+
+  main .menu h1 {
+    font-size: 3.5vw;
+  }
+
+  main .menu .options {
+    height: 40%;
+  }
+
+  main .menu .fps-container,
+  main .menu .init-cells-container,
+  main .menu .radius-container {
+    width: 65%;
+    p {
+      font-size: 3vw;
+    }
+    input {
+      height: 4.75vw;
+      width: 7.5vw;
+      font-size: 2vw;
+    }
+    button {
+      height: 4.75vw;
+      width: 3vw;
+    }
+  }
+
+  main .menu .btn-controls {
+    .start-btn {
+      @include mixins.button(
+        95%,
+        6vw,
+        vars.$bg-color-primary,
+        vars.$text-secondary,
+        0.3vw
+      );
+      font-size: 2.5vw;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) and (orientation: portrait) {
+  main .menu {
+    padding: 3vw 0;
+    border-radius: 1vw;
+    width: 70vw;
+    height: 80vw;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    main .menu {
+      background-color: rgba(255, 255, 255, 0.1);
+      -webkit-backdrop-filter: blur(10px) opacity(50%);
+      backdrop-filter: blur(10px) opacity(50%);
+    }
+  }
+
+  main .menu h1 {
+    font-size: 4vw;
+  }
+
+  main .menu .fps-container,
+  main .menu .init-cells-container,
+  main .menu .radius-container {
+    width: 65%;
+    p {
+      font-size: 3.25vw;
+    }
+    input {
+      height: 5.5vw;
+      width: 6vw;
+      font-size: 2.5vw;
+    }
+    button {
+      height: 5.5vw;
+      width: 3.5vw;
+    }
+  }
+
+  main .menu .btn-controls {
+    .start-btn {
+      @include mixins.button(
+        95%,
+        6.5vw,
+        vars.$bg-color-primary,
+        vars.$text-secondary,
+        0.5vw
+      );
+      font-size: 2.5vw;
+    }
+  }
+}

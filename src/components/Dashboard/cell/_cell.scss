@@ -1,0 +1,17 @@
+@use "../../../mixins";
+@use "../../../vars";
+
+div.cell {
+  height: 2.25vw;
+  width: 2.25vw;
+  border-radius: 0.25vw;
+  cursor: pointer;
+}
+
+div.cell.dead {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+div.cell.alive {
+  background-color: rgba(255, 255, 255, 0.75);
+}

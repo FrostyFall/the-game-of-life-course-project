@@ -1,0 +1,48 @@
+@use "../../../mixins";
+@use "../../../vars";
+
+div.board {
+  @include mixins.flex(space-between, align-items, column);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.65vw;
+  max-height: 45vw;
+  width: 100%;
+  border-radius: 0.5vw;
+  div.info-container {
+    @include mixins.flex(space-between, center);
+    margin-bottom: 0.75vw;
+    height: 2.25vw;
+  }
+  span.gens-born,
+  span.cells-left {
+    @include mixins.button(
+      17.5%,
+      100%,
+      vars.$bg-color-primary,
+      vars.$text-secondary,
+      0.25vw
+    );
+    @include mixins.flex(center, center);
+    align-self: flex-end;
+    font-size: 0.95vw;
+  }
+  div.grid {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    border-radius: 0.25vw;
+    padding: 0.6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.55vw;
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  div.board {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px) opacity(50%);
+    backdrop-filter: blur(10px) opacity(50%);
+  }
+}

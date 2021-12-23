@@ -1,0 +1,70 @@
+@use "../../../mixins";
+@use "../../../vars";
+
+div.controls-panel {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.65vw;
+  width: 100%;
+  height: 3.75vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5vw;
+  margin-top: 0.5vw;
+  button.start-game-btn {
+    @include mixins.button(
+      71%,
+      100%,
+      vars.$bg-color-primary,
+      vars.$text-secondary,
+      0.25vw
+    );
+  }
+  a.back-to-mm {
+    @include mixins.button(
+      18%,
+      100%,
+      vars.$bg-color-primary,
+      vars.$text-secondary,
+      0.25vw
+    );
+    @include mixins.flex(center, center);
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 1.05vw;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  button.restart-btn {
+    @include mixins.button(
+      9.5%,
+      100%,
+      vars.$bg-color-primary,
+      vars.$text-secondary,
+      0.25vw
+    );
+    @include mixins.flex(center, center);
+    svg {
+      height: 38%;
+      width: 38%;
+    }
+  }
+  button {
+    font-size: 1.05vw;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  div.controls-panel {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px) opacity(50%);
+    backdrop-filter: blur(10px) opacity(50%);
+  }
+}
